@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  twitch:
+    image: sebreiro/twitchlivestreamsnotifier_docker:latest
+    container_name: twitch_streams_notifier
+    restart: unless-stopped
+    volumes:
+      - /home/twitch_telegram/twitch/Config:/app/Config
+      - /home/twitch_telegram/twitch/Log:/app/Log
+    networks: 
+      - default
+    depends_on: 
+      - telegram
+
+  telegram:
+    image: sebreiro/telegrambotmessagesender_docker:latest
+    container_name: telegram_bot_message_sender
+    restart: unless-stopped
+    volumes:
+      - /home/twitch_telegram/telegram/Config:/app/Config
+      - /home/twitch_telegram/telegram/Log:/app/Log
+    networks:
+      - default
+      
+networks:
+  default:
+    driver: bridge
