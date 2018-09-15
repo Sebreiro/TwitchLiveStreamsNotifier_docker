@@ -1,6 +1,6 @@
 TelegramBotMessageSender_docker
 ==
-Docker image of [TwitchLiveStreamsNotifier](https://github.com/Sebreiro/TwitchLiveStreamsNotifier)
+[Docker image](https://hub.docker.com/r/sebreiro/twitchlivestreamsnotifier_docker/) of [TwitchLiveStreamsNotifier](https://github.com/Sebreiro/TwitchLiveStreamsNotifier)
 
 ### Note ###  
 Application has no environment variables, all settings located in the config file `appsettings.json`  
