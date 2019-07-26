@@ -1,5 +1,5 @@
 # Stage 1
-FROM microsoft/dotnet:2.1-sdk as builder
+FROM microsoft/dotnet:2.2-sdk as builder
 
 WORKDIR /source
 
@@ -9,7 +9,7 @@ RUN set -ex && \
     dotnet publish src --output /app/ --configuration Release
 
 #Stage 2
-FROM microsoft/dotnet:2.1-runtime
+FROM microsoft/dotnet:2.2-runtime
 
 WORKDIR /app
 
